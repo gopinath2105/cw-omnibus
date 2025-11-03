@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["tsconfig.json"],
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@angular-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@angular-eslint/recommended"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "arrow-parens": ["error", "as-needed"],
+    "curly": ["error", "all"],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "max-len": ["warn", { "code": 160 }],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "asyncArrow": "always",
+      "constructor": "never",
+      "method": "never",
+      "named": "never"
+    }],
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-inferrable-types": ["warn", { "ignoreParameters": true }],
+    "@typescript-eslint/ban-types": "off",
+
+    /* angular codelyzer equivalents */
+    "@angular-eslint/component-class-suffix": "error",
+    "@angular-eslint/contextual-lifecycle": "error",
+    "@angular-eslint/directive-class-suffix": "error",
+    "@angular-eslint/directive-selector": [
+      "error",
+      { "type": "attribute", "prefix": "flx", "style": "camelCase" }
+    ],
+    "@angular-eslint/component-selector": [
+      "error",
+      { "type": "element", "prefix": "flx", "style": "kebab-case" }
+    ],
+    "@angular-eslint/no-conflicting-lifecycle": "error",
+    "@angular-eslint/no-host-metadata-property": "error",
+    "@angular-eslint/no-input-rename": "error",
+    "@angular-eslint/no-inputs-metadata-property": "error",
+    "@angular-eslint/no-output-native": "error",
+    "@angular-eslint/no-output-on-prefix": "error",
+    "@angular-eslint/no-output-rename": "error",
+    "@angular-eslint/no-outputs-metadata-property": "error",
+    "@angular-eslint/use-lifecycle-interface": "off",               // deprecated in v13+
+    "@angular-eslint/use-pipe-transform-interface": "error",
+    "@angular-eslint/template/banana-in-box": "error",
+    "@angular-eslint/template/no-negated-async": "error"
+  }
+}
